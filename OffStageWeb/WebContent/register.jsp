@@ -43,7 +43,7 @@
 			</div>
 
 			<div class="input-field">
-				<input type="tel" id="number" name="altNumber" required /> <label
+				<input type="tel" id="altnumber" name="altNumber" required /> <label
 					for="altNumber">Alternate Contact</label>
 			</div>
 
@@ -68,16 +68,31 @@
 					<span class="radio"> <input type="radio" name="gender" id="gender"
 						value="Male" checked>Male
 					</span> 
-					<span class="radio"><input type="radio" name="gender" id="gener" value="Female">Female</span>
+					<span class="radio"><input type="radio" name="gender" id="gender" value="Female">Female</span>
 					<span class="radio"><input type="radio" name="gender" id="gender" value="Other">Other</span>
 				</div>
 			</div>
-
-			<div class="btns">
+			
+			<div class="input-field"  id="stuId" style="visibility: hidden;">
+				<input type="text" id="sid" name="sid" required /> <label
+					for="sid">Student Id</label>
+			</div>
+			
+		</div>
+		<div class="btns">
 				<button type="submit" class="submit">Submit</button>
 			</div>
-
-		</div>
+		
 	</form>
+	<script type="text/javascript" src="js/jquery.js"></script>
 </body>
+<script type="text/javascript">
+$('#college').on('keyup', function (e) {
+	var college=$('#college').val();
+	if(college.toLowerCase()=="daiict")
+		document.getElementById("stuId").style.visibility="visible";
+	else
+		document.getElementById("stuId").style.visibility="hidden";
+});
+</script>
 </html>

@@ -2,87 +2,64 @@ package com.shared;
 
 public class participantBean {
 	public String toString() {
-		return "participantBean [participantId=" + participantId + ", year=" + year + ", status=" + status + 
-				", transactionNo=" + transactionNo + ", modeId="+modeId+", userId="+  userId + ", eventId=" +eventId+"]";
+		return "participantBean [id=" + id + ", participationCategory=" + partcipationCategory + ", paymentMode=" + 
+				paymentMode + ", teamName=" + teamName + ", eventId" + eventId + ",participantId="+  participantId +
+				"participationFeeId"+ participatioFeeId + "]";
 	}
-	private String participantId;
-	private String year;
-	private String status;
-	private String transactionNo;
-	private String modeId;
-	private String userId;
+	private String id;
+	private String partcipationCategory;
+	private String paymentMode;
+	private String teamName;
 	private String eventId;
+	private String participantId;
+	private String participatioFeeId;
 	/**
-	 * @return the participantId
+	 * @return the id
 	 */
-	public String getParticipantId() {
-		return participantId;
+	public String getId() {
+		return id;
 	}
 	/**
-	 * @param participantId the participantId to set
+	 * @param id the id to set
 	 */
-	public void setParticipantId(String participantId) {
-		this.participantId = participantId;
+	public void setId(String id) {
+		this.id = id;
 	}
 	/**
-	 * @return the year
+	 * @return the partcipationCategory
 	 */
-	public String getYear() {
-		return year;
+	public String getPartcipationCategory() {
+		return partcipationCategory;
 	}
 	/**
-	 * @param year the year to set
+	 * @param partcipationCategory the partcipationCategory to set
 	 */
-	public void setYear(String year) {
-		this.year = year;
+	public void setPartcipationCategory(String partcipationCategory) {
+		this.partcipationCategory = partcipationCategory;
 	}
 	/**
-	 * @return the status
+	 * @return the paymentMode
 	 */
-	public String getStatus() {
-		return status;
+	public String getPaymentMode() {
+		return paymentMode;
 	}
 	/**
-	 * @param status the status to set
+	 * @param paymentMode the paymentMode to set
 	 */
-	public void setStatus(String status) {
-		this.status = status;
+	public void setPaymentMode(String paymentMode) {
+		this.paymentMode = paymentMode;
 	}
 	/**
-	 * @return the transactionNo
+	 * @return the teamName
 	 */
-	public String getTransactionNo() {
-		return transactionNo;
+	public String getTeamName() {
+		return teamName;
 	}
 	/**
-	 * @param transactionNo the transactionNo to set
+	 * @param teamName the teamName to set
 	 */
-	public void setTransactionNo(String transactionNo) {
-		this.transactionNo = transactionNo;
-	}
-	/**
-	 * @return the modeId
-	 */
-	public String getModeId() {
-		return modeId;
-	}
-	/**
-	 * @param modeId the modeId to set
-	 */
-	public void setModeId(String modeId) {
-		this.modeId = modeId;
-	}
-	/**
-	 * @return the userId
-	 */
-	public String getUserId() {
-		return userId;
-	}
-	/**
-	 * @param userId the userId to set
-	 */
-	public void setUserId(String userId) {
-		this.userId = userId;
+	public void setTeamName(String teamName) {
+		this.teamName = teamName;
 	}
 	/**
 	 * @return the eventId
@@ -96,4 +73,29 @@ public class participantBean {
 	public void setEventId(String eventId) {
 		this.eventId = eventId;
 	}
+	/**
+	 * @return the participantId
+	 */
+	public String getParticipantId() {
+		return participantId;
+	}
+	/**
+	 * @param participantId the participantId to set
+	 */
+	public void setParticipantId(String participantId) {
+		this.participantId = participantId;
+	}
+	/**
+	 * @return the participatioFeeId
+	 */
+	public String getParticipatioFeeId() {
+		return participatioFeeId;
+	}
+	/**
+	 * @param participatioFeeId the participatioFeeId to set
+	 */
+	public void setParticipatioFeeId(String participatioFeeId) {
+		this.participatioFeeId = participatioFeeId;
+	}
+	
 }

@@ -31,7 +31,7 @@
 		</div>
 
 		<div class="input-field">
-			<select name="payment">
+			<select name="payment" id="payment">
 				<option value="cash">cash</option>
 				<option value="paytm" onselect="show()">paytm</option>
 				<option value="google pay">google pay</option>

@@ -4,7 +4,7 @@ public class userBean {
 	public String toString() {
 		return "userBean [id=" + id + ", email=" + email + ", password=" + password + ", name=" + name + ", contact="
 				+ contact + ", altContact=" + altContact + ",gender=" + gender + ",college=" + college + ",address="
-				+ address + "]";
+				+ address + ", studentId=" + studentId +"]";
 	}
 
 	private String id;
@@ -16,6 +16,7 @@ public class userBean {
 	private String gender;
 	private String college;
 	private String address;
+	private String studentId;
 
 	/**
 	 * @return the id
@@ -129,6 +130,20 @@ public class userBean {
 
 	public void setAddress(String address) {
 		this.address = address;
+	}
+
+	/**
+	 * @return the studentId
+	 */
+	public String getStudentId() {
+		return studentId;
+	}
+
+	/**
+	 * @param studentId the studentId to set
+	 */
+	public void setStudentId(String studentId) {
+		this.studentId = studentId;
 	}
 
 }

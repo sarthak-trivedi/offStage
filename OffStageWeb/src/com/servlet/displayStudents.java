@@ -8,18 +8,17 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.service.userService;
 import com.service.impl.userServiceImpl;
-import com.shared.studentBean;
 
 /**
- * Servlet implementation class student
+ * Servlet implementation class displayStudents
  */
-public class student extends HttpServlet {
+public class displayStudents extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public student() {
+    public displayStudents() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -29,7 +28,8 @@ public class student extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		userService us=new userServiceImpl();
+		request.setAttribute("studentList", us.getStudentList());
 	}
 
 	/**
@@ -37,20 +37,7 @@ public class student extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		userService us=new userServiceImpl();
-		studentBean sb=new studentBean();
-		
-		sb.setId(request.getParameter("sid"));
-		sb.setName(request.getParameter("name"));
-		sb.setEmail(request.getParameter("email"));
-		sb.setContact(request.getParameter("number"));
-		sb.setAltContact(request.getParameter("emNumber"));
-		sb.setBatchYear(request.getParameter("year"));
-		sb.setProgramme(request.getParameter("course"));
-		sb.setGender(request.getParameter("gender"));
-		
-		us.addStudentData(sb);
-		
+		doGet(request, response);
 	}
 
 }

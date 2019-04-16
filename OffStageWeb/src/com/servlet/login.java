@@ -43,10 +43,10 @@ public class login extends HttpServlet {
 		HttpSession session = request.getSession();
 		userService login=new userServiceImpl();
 		userBean bean=login.getUser(username, password);
-		String uname=bean.getName();
-		if(uname!=null)
+		if(bean!=null)
 		{
-				session.setAttribute("userBean", bean);
+				session.setAttribute("userbean", bean);
+				session.setAttribute("type", "participant");
 				response.sendRedirect("index.jsp");
 		}
 		else

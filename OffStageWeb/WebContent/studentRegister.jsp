@@ -64,7 +64,7 @@
 		</div>
 		
 		<div class="input-field">
-			<input type="year" id="year" name="year" required /> <label for="year">Batch Year
+			<input type="text" id="year" name="year" required /> <label for="year">Batch Year
 				</label>
 		</div>
 		

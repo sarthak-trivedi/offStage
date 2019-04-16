@@ -19,7 +19,8 @@
 <body onload="x()" class="noscroll">
 <jsp:include page="nav.jsp"/>
 	<div id="FadeDiv" class="panel">
-		<img src="images/OffStageLogo5.PNG" alt="">
-	</div>
+        <div class="HeadHome">OffStage</div>
+        <h2>To Make Your On Stage Performance Better</h2>
+    </div>
 </body>
 </html>

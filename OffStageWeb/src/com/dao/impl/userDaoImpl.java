@@ -242,4 +242,34 @@ public class userDaoImpl implements userDao {
 		}
 	}
 
+	@Override
+	public eventBean getEvent(Connection con, int eid) throws SQLException {
+		// TODO Auto-generated method stub
+		String p = "select * from event where event_id=?";
+		PreparedStatement ps;
+
+		try {
+			ps = con.prepareStatement(p);
+			ps.setInt(1, eid);
+			ResultSet s1 = ps.executeQuery();
+			eventBean bean = null;
+			while (s1.next()) {
+				bean = new eventBean();
+				bean.setEventName(s1.getString(2));
+				bean.setDescription(s1.getString(3));
+				bean.setDate(s1.getString(4));
+				bean.setStartTime(s1.getString(5));
+				bean.setEventType(s1.getString(6));
+				bean.setEndTime(s1.getString(7));
+				bean.setPrizeMoney(s1.getString(8));
+				bean.setParticipationFee(s1.getString(9));
+				bean.setVenue(s1.getString(10));
+			}
+			return bean;
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
+
 }

@@ -41,10 +41,6 @@
 				<th>Role</th>
 			</tr>
 			<c:forEach items="${studentList}" var="bean">
-<%-- 				<c:url var="insert" value="insertUser"> --%>
-<%-- 						<c:param name="sid" value="${bean.id }"></c:param> --%>
-<%-- 						<c:param name="roles" value="${role}"></c:param> --%>
-<%-- 				</c:url> --%>
 				<c:set var="i" value="${i+1}"></c:set>
 				<tr>
 					<td id="sid"><c:out value="${bean.id }"></c:out></td>
@@ -58,8 +54,6 @@
 							<option value="${bean.id }">Core Member</option>
 							<option value="${bean.id }">Coordinator</option>
 					</select>
-<!-- 						</td> -->
-<%-- 						<td><a href="${insert}">Insert</a></td> --%>
 				</tr>
 			</c:forEach>
 		</table>
@@ -67,15 +61,6 @@
 	<script type="text/javascript" src="js/jquery.js"></script>
 </body>
 <script>
-// $('#role').on('click', function (e) {
-//     var optionSelected = $("option:selected", this);
-//     var valueSelected = this.value;
-// 	var sid=$('#sid').text();
-// 	console.log(valueSelected);
-// 	console.log(sid);
-<%--     $.get( "<%=request.getContextPath()%>/eventParticipationFees", { id: ""+valueSelected+""} ) --%>
-//     .done();
-// });
 $('select').on('change',function (){
 	var sel=this.value;
 	var sid=$(this).find(":selected").text();

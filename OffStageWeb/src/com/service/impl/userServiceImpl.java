@@ -9,8 +9,6 @@ import com.dao.userDao;
 import com.dao.impl.commonDaoImpl;
 import com.dao.impl.userDaoImpl;
 import com.service.userService;
-import com.shared.SendEmail;
-import com.shared.UserBean;
 import com.shared.accommodationBean;
 import com.shared.committeeBean;
 import com.shared.eventBean;
@@ -182,8 +180,10 @@ public class userServiceImpl implements userService {
 			eventBean ebean=getEvent(eid);
 			System.out.println("registration mail :");
 			if (ebean!=null){
-				sendEmail.send("yashshah5325@gmail.com", bean.get,"Please find your Password",
-						"Your password College Alumni Portal is::" + password);
+				sendEmail.send("offstage0@gmail.com", bean.getEmail(),"Registrtion for "+ebean.getEventName(),
+						"Dear Participant,\n Thank you for registering in the "+ebean.getEventName() +
+						"\n Please be there on time no late entries will be permitted "
+						+ "\n Start time for the event is "+ ebean.getStartTime());
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -194,6 +194,11 @@ public class userServiceImpl implements userService {
 	@Override
 	public eventBean getEvent(int eid) {
 		// TODO Auto-generated method stub
+		try (Connection con = comdao.getConnnection()) {
+			return userdao.getEvent(con,eid);
+			}catch (SQLException e) {
+				e.printStackTrace();
+			}
 		return null;
 	}
 

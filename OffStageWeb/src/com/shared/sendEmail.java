@@ -11,12 +11,12 @@ import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 
 public class sendEmail {
-	private static String emailAddress = "offstage@gmail.com";
+	private static String emailAddress = "offstage0@gmail.com";
 	//TODO Please enter the valid email id - Password here
-	private static String emailPassword = "yash@321";
+	private static String emailPassword = "dhrumil1";
 
 	public static void main(String args[]) {
-		send("yashshah5325@gmail.com", "shahyash5100@gmail.com","Registration for the Event",
+		send("offstage0@gmail.com", "shahyash5100@gmail.com","Registration for the Event",
 				"Your password College Alumni Portal is::");
 	}
 	

@@ -95,6 +95,10 @@ public class participation extends HttpServlet {
 			us.addParticipationData(pb);
 		
 		System.out.println();
+		
+		userBean ub=new userBean();
+		
+		us.registrationMail(((userBean)session.getAttribute("userbean")), Integer.parseInt(pb.getEventId()));
 		response.sendRedirect("index.jsp");
 	}
 

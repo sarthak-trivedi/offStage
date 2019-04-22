@@ -4,7 +4,7 @@ public class userBean {
 	public String toString() {
 		return "userBean [id=" + id + ", email=" + email + ", password=" + password + ", name=" + name + ", contact="
 				+ contact + ", altContact=" + altContact + ",gender=" + gender + ",college=" + college + ",address="
-				+ address + ", studentId=" + studentId +"]";
+				+ address + ", studentId=" + studentId + ", eventName=" + eventName + "]";
 	}
 
 	private String id;
@@ -17,6 +17,21 @@ public class userBean {
 	private String college;
 	private String address;
 	private String studentId;
+	private String eventName;
+
+	/**
+	 * @return the eventName
+	 */
+	public String getEventName() {
+		return eventName;
+	}
+
+	/**
+	 * @param eventName the eventName to set
+	 */
+	public void setEventName(String eventName) {
+		this.eventName = eventName;
+	}
 
 	/**
 	 * @return the id

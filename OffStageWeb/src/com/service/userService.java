@@ -24,4 +24,6 @@ public interface userService {
 	String addCommitteeMemberData(committeeBean bean);
 	void registrationMail(userBean bean,int eid);
 	eventBean getEvent(int eid);
+	List<userBean> getParticipantList();
+	
 }

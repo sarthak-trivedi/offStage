@@ -34,12 +34,9 @@ public class userDaoImpl implements userDao {
 			bean.setDescription(s1.getString(3));
 			bean.setDate(s1.getString(4));
 			bean.setStartTime(s1.getString(5));
-			bean.setEventType(s1.getString(6));
 			bean.setEndTime(s1.getString(7));
 			bean.setPrizeMoney(s1.getString(8));
-			bean.setParticipationFee(s1.getString(9));
 			bean.setVenue(s1.getString(10));
-			bean.setUserId(s1.getString(11));
 			eventlist.add(bean);
 		}
 		return eventlist;
@@ -270,6 +267,24 @@ public class userDaoImpl implements userDao {
 			e.printStackTrace();
 		}
 		return null;
+	}
+
+	@Override
+	public List<userBean> getParticipantList(Connection con) throws SQLException {
+		// TODO Auto-generated method stub
+		String q = "select * from event natural join participation natural join participant";
+		Statement stmt = con.createStatement();
+		List<userBean> participantlist = new ArrayList<>();
+		ResultSet s1 = stmt.executeQuery(q);
+		while (s1.next()) {
+			userBean bean = new userBean();
+			bean.setName(s1.getString("participant_name"));
+			bean.setEmail(s1.getString("participant_email"));
+			bean.setContact(s1.getString("participant_contact"));
+			bean.setEventName(s1.getString("event_name"));
+			participantlist.add(bean);
+		}
+		return participantlist;
 	}
 
 }

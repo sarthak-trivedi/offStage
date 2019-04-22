@@ -25,4 +25,5 @@ public interface userDao {
 	committeeBean getMember(Connection con, String username, String password) throws SQLException;
 	int insertCommitteeMemberData(Connection con, committeeBean bean) throws SQLException; 
 	eventBean getEvent(Connection con,int eid) throws SQLException;
+	List<userBean> getParticipantList(Connection con) throws SQLException;
 }

@@ -180,10 +180,12 @@ public class userServiceImpl implements userService {
 			eventBean ebean=getEvent(eid);
 			System.out.println("registration mail :");
 			if (ebean!=null){
-				sendEmail.send("offstage0@gmail.com", bean.getEmail(),"Registrtion for "+ebean.getEventName(),
-						"Dear Participant,\n Thank you for registering in the "+ebean.getEventName() +
-						"\n Please be there on time no late entries will be permitted "
-						+ "\n Start time for the event is "+ ebean.getStartTime());
+				sendEmail.send("offstage0@gmail.com", bean.getEmail(),"Registrtion in Synapse-19",
+						"Dear Participant,\n\nThank you for participating in synapse 2019."+
+						"\nEvent Name: "+ebean.getEventName() + "\nEvent Date: "+ebean.getDate()
+						+"\nEvent Time: "+ ebean.getStartTime() + " to " + ebean.getEndTime()
+						+"\nEvent Venue: " + ebean.getVenue()+ "\n\nPlease Reach Helpdesk before 30 minutes"+
+						"\n\nRegards,\nTeam Synapse");
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -199,6 +201,17 @@ public class userServiceImpl implements userService {
 			}catch (SQLException e) {
 				e.printStackTrace();
 			}
+		return null;
+	}
+
+	@Override
+	public List<userBean> getParticipantList() {
+		// TODO Auto-generated method stub
+		try (Connection con = comdao.getConnnection()) {
+			return userdao.getParticipantList(con);
+		}catch (SQLException e) {
+			e.printStackTrace();
+		}
 		return null;
 	}
 

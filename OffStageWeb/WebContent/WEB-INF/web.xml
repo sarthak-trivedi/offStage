@@ -129,4 +129,14 @@
     <servlet-name>insertUser</servlet-name>
     <url-pattern>/insertUser</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>reportData</display-name>
+    <servlet-name>reportData</servlet-name>
+    <servlet-class>com.servlet.reportData</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>reportData</servlet-name>
+    <url-pattern>/reportData</url-pattern>
+  </servlet-mapping>
 </web-app>

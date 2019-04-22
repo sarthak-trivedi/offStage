@@ -21,6 +21,10 @@
 			<li class="item menuitem"><a href="addMembers.jsp"> Add Members
 					<div class="line"></div>
 			</a></li>
+			
+			<li class="item menuitem"><a href="reports.jsp"> Report
+					<div class="line"></div>
+			</a></li>
 		</c:if>
 
 		<c:if
